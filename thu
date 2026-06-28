@@ -1,0 +1,72 @@
+<!--
+    <section class="main-content">
+        <h2 class="title">&#9472; &#10070; &#9472; I. SỰ HÌNH THÀNH VÀ PHÁT TRIỂN &#9472; &#10070; &#9472;</h2>
+        
+        <div class="grid-container">
+            <div class="card">
+                <img src="image/images.jpg" alt="gai doan 1">
+                <h4>GIAI DOAN 1</h4>
+                <p>kham pha nhubg pgong tuc tap quan o vung dat con nguoi caht phat giau tinh cam và</p>
+            </div>
+            <div class="card">
+                <img src="image/images.jpg" alt="gai doan 2">
+                <h4>GIAI DOAN 2</h4>
+                <p>kham pha nhubg pgong tuc tap quan o vung dat con nguoi caht phat giau tinh cam và</p>
+            </div>
+            <div class="card">
+                <img src="image/images.jpg" alt="gai doan 3">
+                <h4>GIAI DOAN 3</h4>
+                <p>kham pha nhubg pgong tuc tap quan o vung dat con nguoi caht phat giau tinh cam và</p>
+            </div>
+            <div class="card">
+                <img src="image/images.jpg" alt="gai doan 4">
+                <h4>GIAI DOAN 4</h4>
+                <p>kham pha nhubg pgong tuc tap quan o vung dat con nguoi caht phat giau tinh cam và</p>
+            </div>
+        </div>
+    </section>
+    -->
+    /* --- PHẦN 4 HỘP NẰM NGANG --- */
+.main-content {
+    margin: -32px auto 30px auto;
+    position: relative;
+    width: 97%;
+    background: white;
+    border-radius: 8px;
+    padding-bottom: 30px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+}
+
+.title { text-align: center; font-size: 14px; padding: 15px; }
+
+/* Thùng chứa Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Hộp con (Card) */
+.card {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* GÔP CODE: Tất cả chữ trong card dùng chung quy tắc này */
+.card h4, .card p {
+    padding: 6px 10px;
+    word-break: break-word;
+    text-align: left;
+}
+
+.card h4 { font-size: 14px; }
+.card p { font-size: 10px; color: #333; }
