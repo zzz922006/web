@@ -22,7 +22,7 @@ body {
 .hero h1, .hero p { word-break: break-word; }
 .hero h1 { font-size: 17px; margin-bottom: 8px; width: 60%; }
 .hero p { font-size: 10px; line-height: 1.4; width: 40%; }
-.divider { margin: 8px 0 0 25px; }
+.divider { margin: 7px 0 0 15px; }
 
 /* --- PHẦN CHI TIẾT GIAI ĐOẠN (TỐI ƯU CHO ĐIỆN THOẠI) --- */
 .detail-section {
