@@ -162,6 +162,9 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(74, 44, 17, 0.15);
     border: 1px solid #a18262; /* Viền khung tranh nhỏ cho ảnh timeline */
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;
 }
 .image-box img {
     width: 100%;
