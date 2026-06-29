@@ -157,7 +157,7 @@ body {
 .card-body { padding: 5px; font-size: 8px; color: #4e4033;line-height: 1.2; }
 
 .image-box {
-    height: 150px;
+    height: 140px;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(74, 44, 17, 0.15);
