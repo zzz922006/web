@@ -1,4 +1,6 @@
-/* --- RESET & THIẾT LẬP CHUNG --- */
+/* ==========================================================================
+   1. RESET & THIẾT LẬP CHUNG (Mặc định cho Mobile - Giữ nguyên 100%)
+   ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -22,9 +24,9 @@ body {
 .hero h1, .hero p { word-break: break-word; }
 .hero h1 { font-size: 17px; margin-bottom: 8px; width: 60%; }
 .hero p { font-size: 10px; line-height: 1.4; width: 40%; }
-.divider { margin: 7px 0 0 15px; }
+.divider { margin: 7px 0 0 5px; }
 
-/* --- PHẦN CHI TIẾT GIAI ĐOẠN (TỐI ƯU CHO ĐIỆN THOẠI) --- */
+/* --- PHẦN CHI TIẾT GIAI ĐOẠN --- */
 .detail-section {
     width: 96%;
     margin: 20px auto;
@@ -116,7 +118,7 @@ body {
     background: #c8a481; /* Màu thanh tre / trục cuốn thư */
     z-index: 1;
 }
-.noidung1 h3 { font-size: 9; text-align: center; margin-bottom: 30px; padding-top: 18px; color: #8c2d19; } /* Đổi màu tiêu đề timeline sang đỏ son */
+.noidung1 h3 { font-size: 16px; text-align: center; margin-bottom: 30px; padding-top: 18px; color: #8c2d19; } /* Sửa font-size hợp lệ */
 .item {
     display: grid;
     grid-template-columns: 40px 1fr;
@@ -153,8 +155,17 @@ body {
     box-shadow: 0 4px 12px rgba(74, 44, 17, 0.15);
     border: 1px solid #e1d3b7; /* Viền nhẹ tạo độ trang trọng */
 }
-.card h3 { margin-bottom: 12px;margin-top: -15px; color: #8c2d19; text-align: left; }
-.card-body { padding: 5px; font-size: 10px; color: #4e4033;line-height: 1.2; }
+.timeline::after {
+    content: "▼";         /* Sử dụng ký tự hình tam giác chĩa xuống */
+    position: absolute;
+    left: 10px;           /* Căn chỉnh cho vừa vặn với trục line */
+    bottom: -15px;        /* Đẩy xuống cuối timeline */
+    font-size: 25px;      /* Kích thước mũi tên */
+    color: #c8a481;       /* Màu sắc trùng với timeline */
+    z-index: 1;
+}
+.card h3 { margin-bottom: 12px;margin-top: -15px; color: #8c2d19; text-align: left;line-height: 1.2; }
+.card-body { padding: 5px; font-size: 10px; color: #4e4033;line-height: 1.3; }
 
 .image-box {
     height: 140px;
@@ -171,6 +182,7 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
 /* --- PHẦN BẢN SẮC VĂN HÓA (3 CỘT) --- */
 .culture-section {
     width: 97%;
@@ -234,4 +246,57 @@ body {
     font-size: 14px;
     color: #5c4c3e; /* Nâu ấm mộc mạc */
     line-height: 1.6;
+}
+
+
+/* ==========================================================================
+   2. BỔ SUNG: KÍCH THƯỚC MÁY TÍNH BẢNG (TABLET: 768px - 1024px)
+   ========================================================================== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .hero { height: 340px; padding: 40px 0 0 40px; }
+    .hero h1 { font-size: 28px; width: 65%; }
+    .hero p { font-size: 14px; width: 50%; }
+
+    /* Giữ nguyên trục dọc bên trái, chỉ tăng nhẹ font chữ cho dễ đọc trên Tablet */
+    .noidung1 { width: 92%; }
+    .noidung1 h3 { font-size: 22px; }
+    .card-body { font-size: 13px; }
+    .card h3 { font-size: 18px; }
+    .image-box { height: 160px; }
+
+    /* Phần chi tiết chữ tràn quanh ảnh: Tăng nhẹ tỷ lệ ảnh lên 35% để cân đối màn hình */
+    .detail-section { width: 92%; }
+    .detail-row .detail-img { width: 35%; }
+}
+
+
+/* ==========================================================================
+   3. BỔ SUNG: KÍCH THƯỚC MÁY TÍNH ĐỂ BÀN (DESKTOP: Từ 1025px trở lên)
+   ========================================================================== */
+@media screen and (min-width: 1025px) {
+    /* Đóng khung giới hạn màn hình PC để nội dung không bị dạt ra quá xa */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero, .noidung1, .detail-section, .culture-section {
+        max-width: 1100px;
+        width: 100%;
+    }
+
+    .hero { height: 400px; padding: 60px 0 0 50px; }
+    .hero h1 { font-size: 36px; width: 60%; }
+    .hero p { font-size: 16px; width: 45%; }
+
+    /* Giữ nguyên cấu trúc timeline bên trái, chỉ nới rộng kích cỡ chữ và ảnh */
+    .noidung1 { margin-top: -55px; padding: 30px; }
+    .noidung1 h3 { font-size: 26px; }
+    .card { padding: 15px; gap: 20px; }
+    .card-body { font-size: 14px; line-height: 1.4; }
+    .card h3 { font-size: 20px; }
+    .image-box { height: 180px; }
+
+    /* Giữ nguyên hiệu ứng chữ tràn quanh ảnh, chỉ giới hạn chiều rộng ảnh cố định */
+    .detail-row .detail-img { width: 30%; max-width: 320px; }
 }
