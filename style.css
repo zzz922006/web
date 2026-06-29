@@ -4,7 +4,7 @@
 body {
     width: 100%;
     min-height: 100vh;
-    font-family: "Playfair Display", serif;
+    font-family: "Open Sans", sans-serif;
     color: #4a2c11; /* Màu nâu trầm cổ kính */
     background-color: #f7f1e3; /* Màu nền giấy da cổ toàn trang web */
 }
@@ -15,14 +15,14 @@ body {
     height: 280px;
     padding: 24px 0 0 20px;
     /* Dải màu hòa quyện từ nền giấy cổ sang hình ảnh */
-    background: linear-gradient(to right, #f7f1e3 35%, transparent 55%),
+    background: linear-gradient(to right, #f7f1e3 40%, transparent 70%),
                 linear-gradient(to top, #f7f1e3 10%, transparent 25%),
                 url('image/avata1.jpg') no-repeat right center / cover;
 }
 .hero h1, .hero p { word-break: break-word; }
-.hero h1 { font-size: 15px; margin-bottom: 8px; width: 60%; }
-.hero p { font-size: 8px; line-height: 1.4; width: 40%; }
-.divider { margin: 8px 0 0 50px; }
+.hero h1 { font-size: 17px; margin-bottom: 8px; width: 60%; }
+.hero p { font-size: 10px; line-height: 1.4; width: 40%; }
+.divider { margin: 8px 0 0 25px; }
 
 /* --- PHẦN CHI TIẾT GIAI ĐOẠN (TỐI ƯU CHO ĐIỆN THOẠI) --- */
 .detail-section {
@@ -75,7 +75,7 @@ body {
 
 /* Nội dung chữ tự do giãn theo độ dài văn bản */
 .detail-text span { font-size: 12px; letter-spacing: 2px; color: #a18262; display: block; margin-bottom: 8px; } /* Màu vàng đồng phục cổ */
-.detail-text h2 { font-size: 24px; color: #8c2d19; margin-bottom: 15px; } /* Màu đỏ son triều đình */
+.detail-text h2 { font-size: 20px; color: #8c2d19; margin-bottom: 15px; } /* Màu đỏ son triều đình */
 .detail-text p { font-size: 15px; line-height: 1.7; color: #4e4033; margin-bottom: 15px; } /* Màu chữ nâu mực sẫm */
 .detail-text p:last-child { margin-bottom: 0; } /* Xóa khoảng trống thừa của đoạn cuối */
 
@@ -154,7 +154,7 @@ body {
     border: 1px solid #e1d3b7; /* Viền nhẹ tạo độ trang trọng */
 }
 .card h3 { margin-bottom: 10px; color: #8c2d19; text-align: left; }
-.card-body { padding: 10px; font-size: 10px; color: #4e4033; }
+.card-body { padding: 2px; font-size: 10px; color: #4e4033;line-height: 1.5; }
 
 .image-box {
     height: 130px;
