@@ -164,6 +164,17 @@ body {
     color: #c8a481;       /* Màu sắc trùng với timeline */
     z-index: 1;
 }
+.timeline-link {
+    text-decoration: none;
+    color: inherit; /* Giữ nguyên màu chữ gốc của card */
+    display: block;
+    cursor: pointer;
+}
+.timeline-link:hover .card {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
 .card h3 { margin-bottom: 12px;margin-top: -15px; color: #8c2d19; text-align: left;line-height: 1.2; }
 .card-body { padding: 5px; font-size: 10px; color: #4e4033;line-height: 1.3; }
 
@@ -274,20 +285,31 @@ body {
    3. BỔ SUNG: KÍCH THƯỚC MÁY TÍNH ĐỂ BÀN (DESKTOP: Từ 1025px trở lên)
    ========================================================================== */
 @media screen and (min-width: 1025px) {
-    /* Đóng khung giới hạn màn hình PC để nội dung không bị dạt ra quá xa */
     body {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .hero, .noidung1, .detail-section, .culture-section {
+
+    /* CHỈ ĐÓNG KHUNG các phần nội dung bên dưới, BỎ .hero ra ngoài để nền tràn 100% */
+    .noidung1, .detail-section, .culture-section {
         max-width: 1100px;
         width: 100%;
     }
 
-    .hero { height: 400px; padding: 60px 0 0 50px; }
-    .hero h1 { font-size: 36px; width: 60%; }
-    .hero p { font-size: 16px; width: 45%; }
+    /* XỬ LÝ BANNER: Nền tràn 100% màn hình, chữ tự động gom vào giữa */
+    .hero {
+        width: 100%; /* Giúp nền ảnh và màu gradient tràn hết màn hình PC */
+        max-width: 100%; 
+        height: 420px;
+        padding: 80px calc((100% - 1100px) / 2 + 50px) 0; /* Mẹo canh chữ thẳng hàng với nội dung 1100px bên dưới */
+        background: linear-gradient(to right, #f7f1e3 45%, transparent 75%),
+                    linear-gradient(to top, #f7f1e3 5%, transparent 20%),
+                    url('image/avata1.jpg') no-repeat right center / cover;
+    }
+    .hero h1 { font-size: 38px; width: 55%; }
+    .hero p { font-size: 16px; width: 45%; line-height: 1.6; }
+    .divider { margin-top: 15px; }
 
     /* Giữ nguyên cấu trúc timeline bên trái, chỉ nới rộng kích cỡ chữ và ảnh */
     .noidung1 { margin-top: -55px; padding: 30px; }
