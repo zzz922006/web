@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. RESET & THIẾT LẬP CHUNG (Mặc định cho Mobile - Giữ nguyên 100%)
+   1. RESET & THIẾT LẬP CHUNG
    ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -7,8 +7,8 @@ body {
     width: 100%;
     min-height: 100vh;
     font-family: "Open Sans", sans-serif;
-    color: #4a2c11; /* Màu nâu trầm cổ kính */
-    background-color: #f7f1e3; /* Màu nền giấy da cổ toàn trang web */
+    color: #4a2c11;
+    background-color: #f7f1e3;
 }
 
 /* --- PHẦN BANNER HERO --- */
@@ -16,7 +16,6 @@ body {
     width: 100%;
     height: 280px;
     padding: 24px 0 0 20px;
-    /* Dải màu hòa quyện từ nền giấy cổ sang hình ảnh */
     background: linear-gradient(to right, #f7f1e3 40%, transparent 70%),
                 linear-gradient(to top, #f7f1e3 10%, transparent 25%),
                 url('image/avata1.jpg') no-repeat right center / cover;
@@ -36,7 +35,7 @@ body {
 }
 
 .detail-row {
-    display: block; /* CHUYỂN TỪ GRID SANG BLOCK để chữ có thể tràn quanh ảnh */
+    display: block;
     background: #fffdf9; 
     padding: 20px;
     border-radius: 8px;
@@ -44,50 +43,44 @@ body {
     border: 1px solid #e1d3b7; 
 }
 
-/* Cấu trúc cho hàng LẺ (Hàng bình thường: Ảnh nằm bên TRÁI, Chữ tràn bên PHẢI) */
 .detail-row .detail-img {
-    float: left;        /* Đẩy ảnh sang trái */
-    width: 40%;         /* Ảnh chiếm 40% bề ngang */
-    margin-right: 15px; /* Khoảng cách giữa ảnh và chữ */
-    margin-bottom: 8px;  /* Khoảng cách dưới ảnh */
+    float: left;
+    width: 40%;
+    margin-right: 15px;
+    margin-bottom: 8px;
 }
 
-/* Cấu trúc cho hàng CHẴN (.reverse: Ảnh nằm bên PHẢI, Chữ tràn bên TRÁI) */
 .detail-row.reverse .detail-img {
-    float: right;       /* Đẩy ảnh sang phải */
+    float: right;
     margin-right: 0;
-    margin-left: 15px;  /* Khoảng cách bên trái ảnh */
+    margin-left: 15px;
 }
 
-/* Hủy bỏ thuộc tính direction cũ để chữ không bị lỗi canh lề */
 .detail-row.reverse, 
 .detail-row.reverse .detail-text {
     direction: ltr !important; 
 }
 
-/* Định dạng lại ảnh để vừa vặn, không bị trống trên dưới */
 .detail-img img {
     width: 100%;
-    height: auto;       /* Để ảnh tự co giãn theo tỷ lệ gốc, không ép chiều cao */
-    min-height: auto;   /* Xóa bỏ min-height 300px cũ gây trống */
+    height: auto;
+    min-height: auto;
     object-fit: cover;
     border-radius: 6px;
-    border: 2px solid #a18262; /* Thêm viền giả khung tranh đồng cho ảnh tư liệu */
+    border: 2px solid #a18262;
 }
 
-/* Nội dung chữ tự do giãn theo độ dài văn bản */
-.detail-text span { font-size: 12px; letter-spacing: 2px; color: #a18262; display: block; margin-bottom: 8px; } /* Màu vàng đồng phục cổ */
-.detail-text h2 { font-size: 20px; color: #8c2d19; margin-bottom: 15px; } /* Màu đỏ son triều đình */
-.detail-text p { font-size: 15px; line-height: 1.7; color: #4e4033; margin-bottom: 15px; } /* Màu chữ nâu mực sẫm */
-.detail-text p:last-child { margin-bottom: 0; } /* Xóa khoảng trống thừa của đoạn cuối */
+.detail-text span { font-size: 12px; letter-spacing: 2px; color: #a18262; display: block; margin-bottom: 8px; }
+.detail-text h2 { font-size: 20px; color: #8c2d19; margin-bottom: 15px; }
+.detail-text p { font-size: 15px; line-height: 1.7; color: #4e4033; margin-bottom: 15px; }
+.detail-text p:last-child { margin-bottom: 0; }
 
-/* Đổi vị trí cột cho hàng chẵn */
 .detail-row.reverse {
-    direction: rtl; /* Đảo hướng hiển thị từ phải sang trái cho toàn bộ hàng */
+    direction: rtl;
 }
 
 .detail-row.reverse .detail-text {
-    direction: ltr; /* Trả lại hướng đọc chữ từ trái sang phải bình thường để chữ không bị lỗi canh lề */
+    direction: ltr;
 }
 
 /* --- TIMELINE --- */
@@ -98,8 +91,8 @@ body {
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
-    background: #f2f2e5; /* Màu nền cuốn thư / sớ vải sắc phong cổ kính */
-    border: 2px solid #e0dab9; /* Viền sớ */
+    background: #f2f2e5;
+    border: 2px solid #e0dab9;
     padding-bottom: 20px;
 }
 
@@ -115,10 +108,10 @@ body {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: #c8a481; /* Màu thanh tre / trục cuốn thư */
+    background: #c8a481;
     z-index: 1;
 }
-.noidung1 h3 { font-size: 16px; text-align: center; margin-bottom: 30px; padding-top: 18px; color: #8c2d19; } /* Sửa font-size hợp lệ */
+.noidung1 h3 { font-size: 16px; text-align: center; margin-bottom: 30px; padding-top: 18px; color: #8c2d19; }
 .item {
     display: grid;
     grid-template-columns: 40px 1fr;
@@ -128,13 +121,12 @@ body {
     position: relative;
 }
 
-/* Gộp 2 phần khai báo .point cũ làm một */
 .point {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: #8c2d19; /* Màu đỏ triện / ấn ngọc */
-    border: 4px solid #f1e6cf; /* Viền tiệp màu nền cuốn thư */
+    background: #8c2d19;
+    border: 4px solid #f1e6cf;
     z-index: 2;
     justify-self: center;
     display: flex;
@@ -142,31 +134,30 @@ body {
     align-items: center;
     font-size: 23px; 
     box-shadow: 0 2px 5px rgba(74, 44, 17, 0.4);
-    color: #f7f1e3; /* Chữ màu vàng tơ */
+    color: #f7f1e3;
 }
 
-/* Khung thông tin */
 .card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: #fffdf9; /* Nền giấy bản trắng ấm bên trong card */
+    background: #fffdf9;
     padding: 5px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(74, 44, 17, 0.15);
-    border: 1px solid #e1d3b7; /* Viền nhẹ tạo độ trang trọng */
+    border: 1px solid #e1d3b7;
 }
 .timeline::after {
-    content: "▼";         /* Sử dụng ký tự hình tam giác chĩa xuống */
+    content: "▼";
     position: absolute;
-    left: 10px;           /* Căn chỉnh cho vừa vặn với trục line */
-    bottom: -15px;        /* Đẩy xuống cuối timeline */
-    font-size: 25px;      /* Kích thước mũi tên */
-    color: #c8a481;       /* Màu sắc trùng với timeline */
+    left: 10px;
+    bottom: -15px;
+    font-size: 25px;
+    color: #c8a481;
     z-index: 1;
 }
 .timeline-link {
     text-decoration: none;
-    color: inherit; /* Giữ nguyên màu chữ gốc của card */
+    color: inherit;
     display: block;
     cursor: pointer;
 }
@@ -183,9 +174,9 @@ body {
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(74, 44, 17, 0.15);
-    border: 1px solid #a18262; /* Viền khung tranh nhỏ cho ảnh timeline */
+    border: 1px solid #a18262;
     display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
+    justify-content: center;
     align-items: center;
 }
 .image-box img {
@@ -203,48 +194,43 @@ body {
 
 .culture-section h2 {
     font-size: 28px;
-    color: #8c2d19; /* Đỏ son đại diện văn hóa truyền thống */
+    color: #8c2d19;
     margin-bottom: 40px;
     letter-spacing: 1px;
 }
 
-/* Lưới tự động chia cột: Tối thiểu 300px/cột, tự rớt dòng trên điện thoại */
 .culture-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-/* Thẻ chứa nội dung */
 .culture-card {
-    background: #fffdf9; /* Nền lụa bạch */
+    background: #fffdf9;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(74, 44, 17, 0.08);
-    border: 1px solid #e1d3b7; /* Khung viền hộp gỗ/hộp bảo vật */
+    border: 1px solid #e1d3b7;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hiệu ứng nhấc lên nhẹ khi di chuột vào thẻ */
 .culture-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(140, 45, 25, 0.2); /* Đổi sang ánh shadow đỏ trầm quyền lực khi hover */
-    border-color: #a18262; /* Viền chuyển sang màu đồng đậm hơn */
+    box-shadow: 0 8px 25px rgba(140, 45, 25, 0.2);
+    border-color: #a18262;
 }
 
-/* Định dạng ảnh trong thẻ */
 .culture-card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-bottom: 1px solid #e1d3b7; /* Đường cắt ngăn cách ảnh với chữ */
+    border-bottom: 1px solid #e1d3b7;
 }
 
-/* Phần chữ bên trong thẻ */
 .culture-card-body {
     padding: 25px;
-    background: #fffdf9; /* Giữ màu đồng bộ */
+    background: #fffdf9;
 }
 
 .culture-card-body h3 {
@@ -255,7 +241,7 @@ body {
 
 .culture-card-body p {
     font-size: 14px;
-    color: #5c4c3e; /* Nâu ấm mộc mạc */
+    color: #5c4c3e;
     line-height: 1.6;
 }
 
@@ -268,14 +254,12 @@ body {
     .hero h1 { font-size: 28px; width: 65%; }
     .hero p { font-size: 14px; width: 50%; }
 
-    /* Giữ nguyên trục dọc bên trái, chỉ tăng nhẹ font chữ cho dễ đọc trên Tablet */
     .noidung1 { width: 92%; }
     .noidung1 h3 { font-size: 22px; }
     .card-body { font-size: 13px; }
     .card h3 { font-size: 18px; }
     .image-box { height: 160px; }
 
-    /* Phần chi tiết chữ tràn quanh ảnh: Tăng nhẹ tỷ lệ ảnh lên 35% để cân đối màn hình */
     .detail-section { width: 92%; }
     .detail-row .detail-img { width: 35%; }
 }
@@ -291,18 +275,16 @@ body {
         align-items: center;
     }
 
-    /* CHỈ ĐÓNG KHUNG các phần nội dung bên dưới, BỎ .hero ra ngoài để nền tràn 100% */
     .noidung1, .detail-section, .culture-section {
         max-width: 1100px;
         width: 100%;
     }
 
-    /* XỬ LÝ BANNER: Nền tràn 100% màn hình, chữ tự động gom vào giữa */
     .hero {
-        width: 100%; /* Giúp nền ảnh và màu gradient tràn hết màn hình PC */
+        width: 100%;
         max-width: 100%; 
         height: 420px;
-        padding: 80px calc((100% - 1100px) / 2 + 50px) 0; /* Mẹo canh chữ thẳng hàng với nội dung 1100px bên dưới */
+        padding: 80px calc((100% - 1100px) / 2 + 50px) 0;
         background: linear-gradient(to right, #f7f1e3 45%, transparent 75%),
                     linear-gradient(to top, #f7f1e3 5%, transparent 20%),
                     url('image/avata1.jpg') no-repeat right center / cover;
@@ -311,7 +293,6 @@ body {
     .hero p { font-size: 16px; width: 45%; line-height: 1.6; }
     .divider { margin-top: 15px; }
 
-    /* Giữ nguyên cấu trúc timeline bên trái, chỉ nới rộng kích cỡ chữ và ảnh */
     .noidung1 { margin-top: -55px; padding: 30px; }
     .noidung1 h3 { font-size: 26px; }
     .card { padding: 15px; gap: 20px; }
@@ -319,6 +300,5 @@ body {
     .card h3 { font-size: 20px; }
     .image-box { height: 180px; }
 
-    /* Giữ nguyên hiệu ứng chữ tràn quanh ảnh, chỉ giới hạn chiều rộng ảnh cố định */
     .detail-row .detail-img { width: 30%; max-width: 320px; }
 }
